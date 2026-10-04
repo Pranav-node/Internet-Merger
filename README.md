@@ -1,8 +1,8 @@
 # Internet Merger — Multi-Link Parallel Download Accelerator
 
-[![Release](https://img.shields.io/github/v/release/Pranav-node/internet-merger?style=flat-square)](https://github.com/Pranav-node/internet-merger/releases)
+[![Release](https://img.shields.io/github/v/release/Pranav-node/Internet-Merger?style=flat-square)](https://github.com/Pranav-node/Internet-Merger/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D6?style=flat-square&logo=windows)](https://github.com/Pranav-node/internet-merger/releases/latest)
+[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D6?style=flat-square&logo=windows)](https://github.com/Pranav-node/Internet-Merger/releases/latest)
 [![Security Hardened](https://img.shields.io/badge/Security-Hardened%20(127.0.0.1%20only)-success?style=flat-square)](SECURITY.md)
 
 Internet Merger is a high-performance download accelerator that merges multiple internet connections (such as Home Wi-Fi + USB 4G/5G mobile tethering + Ethernet) to accelerate large file downloads. It pulls independent byte ranges concurrently across your physical network adapters and reassembles them on disk into a bit-exact file.
@@ -14,7 +14,7 @@ Controlled through a clean desktop web UI, powered by a local, security-hardened
 ## Quick Start (Windows)
 
 ### Option 1: Standalone Download (No Python or Node Required)
-1. Download **[`InternetMerger-windows.zip`](https://github.com/Pranav-node/internet-merger/releases/latest)** from the latest release.
+1. Download **[`InternetMerger-windows.zip`](https://github.com/Pranav-node/Internet-Merger/releases/latest)** from the latest release.
 2. Unzip the folder anywhere (e.g. `Downloads` or `Desktop`). **No administrator privileges required.**
 3. Double-click **`InternetMerger.exe`**.
 4. Your default browser opens automatically to your private dashboard.
@@ -22,8 +22,8 @@ Controlled through a clean desktop web UI, powered by a local, security-hardened
 ### Option 2: Run from Source
 ```powershell
 # Clone the repository
-git clone https://github.com/Pranav-node/internet-merger.git
-cd internet-merger
+git clone https://github.com/Pranav-node/Internet-Merger.git
+cd Internet-Merger
 
 # Run one-click setup & launcher
 python run.py
