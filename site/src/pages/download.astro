@@ -4,8 +4,10 @@ import Layout from '../layouts/Layout.astro';
 const releaseVersion = "0.1.0";
 const zipFilename = "InternetMerger-windows.zip";
 const releaseDate = "October 4, 2026";
-const sha256Checksum = "8bc222db8def3e0e36617eee58924d99c3fa4e16fa06aa21329d1259a44f3971";
+const sha256Checksum = "f4b64d601f6eba45fbe28313982ed2010cd27486eb4093a1295ea28a79c1450c";
 const githubReleaseUrl = "https://github.com/Pranav-node/Internet-Merger/releases/latest";
+const directDownloadUrl = "https://github.com/Pranav-node/Internet-Merger/releases/latest/download/InternetMerger-windows.zip";
+const checksumsUrl = "https://github.com/Pranav-node/Internet-Merger/releases/latest/download/checksums.txt";
 ---
 
 <Layout
@@ -32,12 +34,12 @@ const githubReleaseUrl = "https://github.com/Pranav-node/Internet-Merger/release
             Internet Merger v{releaseVersion} (Windows 64-bit)
           </div>
           <div style="font-size: 13px; color: var(--text-secondary);">
-            Released {releaseDate} &bull; File: <code>{zipFilename}</code> &bull; ~64 MB
+            Released {releaseDate} &bull; File: <code>{zipFilename}</code> &bull; ~21 MB
           </div>
         </div>
 
         <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
-          <a href="/InternetMerger-windows.zip" download="InternetMerger-windows.zip" class="btn btn-primary btn-lg" style="box-shadow: var(--shadow-md);">
+          <a href={directDownloadUrl} class="btn btn-primary btn-lg" style="box-shadow: var(--shadow-md);">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
@@ -46,8 +48,8 @@ const githubReleaseUrl = "https://github.com/Pranav-node/Internet-Merger/release
             <span>Download .ZIP (Direct)</span>
           </a>
           <div style="display: flex; gap: 12px; font-size: 11px;">
-            <a href={githubReleaseUrl} target="_blank" rel="noopener" style="color: var(--accent);">GitHub Releases &rarr;</a>
-            <a href="/checksums.txt" target="_blank" style="color: var(--text-secondary);">View Checksums &rarr;</a>
+            <a href={githubReleaseUrl} target="_blank" rel="noopener" style="color: var(--accent);">GitHub Release Notes &rarr;</a>
+            <a href={checksumsUrl} target="_blank" rel="noopener" style="color: var(--text-secondary);">View Checksums &rarr;</a>
           </div>
         </div>
       </div>
