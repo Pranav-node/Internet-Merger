@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Page Not Found (404) — Internet Merger"
+  description="The page you requested could not be found. Return to the Internet Merger home page or download section."
+  canonicalPath="/404"
+>
+  <div class="container-narrow" style="padding-top: 80px; padding-bottom: 100px; text-align: center;">
+    <div style="font-size: 72px; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 16px;">
+      404
+    </div>
+    <h1 style="font-size: 30px; font-weight: 800; margin-bottom: 14px;">
+      Page Not Found
+    </h1>
+    <p style="font-size: 16px; color: var(--text-secondary); max-width: 480px; margin: 0 auto 30px; line-height: 1.6;">
+      The page you were looking for doesn't exist or has moved. Here are some helpful links to get you back on track:
+    </p>
+
+    <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+      <a href="/" class="btn btn-primary">Return Home</a>
+      <a href="/download" class="btn btn-secondary">Download Internet Merger</a>
+      <a href="/how-it-works" class="btn btn-secondary">How It Works</a>
+    </div>
+  </div>
+</Layout>

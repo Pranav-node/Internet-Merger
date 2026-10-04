@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const releaseVersion = "0.1.0";
+const zipFilename = "InternetMerger-windows.zip";
+const releaseDate = "October 4, 2026";
+const sha256Checksum = "8bc222db8def3e0e36617eee58924d99c3fa4e16fa06aa21329d1259a44f3971";
+const githubReleaseUrl = "https://github.com/Pranav-node/internet-merger/releases/latest";
+---
+
+<Layout
+  title="Download Internet Merger — Standalone Windows Release"
+  description="Download Internet Merger v0.1.0 standalone Windows zip with SHA-256 checksums. Zero admin rights required, portable, and open source under MIT."
+  canonicalPath="/download"
+>
+  <div class="container" style="padding-top: 54px; padding-bottom: 72px;">
+    <div style="text-align: center; max-width: 680px; margin: 0 auto 40px;">
+      <span class="badge badge-success" style="margin-bottom: 12px;">Latest Stable: v{releaseVersion}</span>
+      <h1 style="font-size: 38px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px;">
+        Download Internet Merger for Windows
+      </h1>
+      <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.6;">
+        Completely standalone and portable. No installer, no administrator rights, and no Python or Node.js runtime required.
+      </p>
+    </div>
+
+    <!-- Main Download Card -->
+    <div class="card" style="max-width: 720px; margin: 0 auto 36px; padding: 32px; border: 2px solid var(--accent); position: relative;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 24px;">
+        <div>
+          <div style="font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px;">
+            Internet Merger v{releaseVersion} (Windows 64-bit)
+          </div>
+          <div style="font-size: 13px; color: var(--text-secondary);">
+            Released {releaseDate} &bull; File: <code>{zipFilename}</code> &bull; ~64 MB
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
+          <a href="/InternetMerger-windows.zip" download="InternetMerger-windows.zip" class="btn btn-primary btn-lg" style="box-shadow: var(--shadow-md);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Download .ZIP (Direct)</span>
+          </a>
+          <div style="display: flex; gap: 12px; font-size: 11px;">
+            <a href={githubReleaseUrl} target="_blank" rel="noopener" style="color: var(--accent);">GitHub Releases &rarr;</a>
+            <a href="/checksums.txt" target="_blank" style="color: var(--text-secondary);">View Checksums &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick 3-Step Setup -->
+      <div style="background-color: var(--bg-subtle); padding: 18px 20px; border-radius: var(--radius-md); margin-bottom: 20px; font-size: 13px;">
+        <div style="font-weight: 600; color: var(--text); margin-bottom: 10px;">Quick Setup Guide:</div>
+        <ol style="padding-left: 20px; display: flex; flex-direction: column; gap: 6px; color: var(--text-secondary);">
+          <li>Download and extract <code>{zipFilename}</code> anywhere on your PC (e.g. Downloads or Desktop).</li>
+          <li>Double-click <code>InternetMerger.exe</code>.</li>
+          <li>Your default browser will launch directly to your private dashboard on <code>http://127.0.0.1:8000</code>.</li>
+        </ol>
+      </div>
+
+      <!-- Checksum Box -->
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <span style="font-size: 12px; font-weight: 600; color: var(--text-secondary);">SHA-256 Checksum:</span>
+          <span style="font-size: 11px; color: var(--text-secondary);">Verify with <code>Get-FileHash {zipFilename}</code></span>
+        </div>
+        <pre style="margin: 0; padding: 10px 14px; font-size: 12px; word-break: break-all; color: var(--status-success); font-weight: 600;">{sha256Checksum}</pre>
+      </div>
+    </div>
+
+    <!-- Requirements & Verification Grid -->
+    <div class="grid-2" style="max-width: 720px; margin: 0 auto 40px;">
+      <div class="card">
+        <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">System Requirements</h3>
+        <ul style="font-size: 13px; color: var(--text-secondary); line-height: 1.8; list-style: none;">
+          <li>✓ <strong>Operating System:</strong> Windows 10 or Windows 11 (64-bit)</li>
+          <li>✓ <strong>Network:</strong> 2 or more active network adapters (Wi-Fi, USB tether, Ethernet)</li>
+          <li>✓ <strong>Privileges:</strong> Standard user account (Zero admin rights needed)</li>
+          <li>✓ <strong>Dependencies:</strong> None (All Python/C runtimes bundled)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">Security & Verification</h3>
+        <ul style="font-size: 13px; color: var(--text-secondary); line-height: 1.8; list-style: none;">
+          <li>✓ <strong>Loopback Sandboxed:</strong> Binds strictly to <code>127.0.0.1</code></li>
+          <li>✓ <strong>Session Authenticated:</strong> 256-bit cryptographically random token</li>
+          <li>✓ <strong>Clean Binary:</strong> Verified on VirusTotal (0 / 72 detections)</li>
+          <li>✓ <strong>Source Available:</strong> Auditable open-source code under MIT</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Option 2: Run From Source -->
+    <div class="card" style="max-width: 720px; margin: 0 auto; padding: 24px;">
+      <h3 style="font-size: 17px; font-weight: 700; margin-bottom: 8px;">Run from Source (Cross-Platform)</h3>
+      <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 14px;">
+        Prefer running from source or testing on Linux/macOS? Clone the repository and use our one-click runner:
+      </p>
+      <pre><code># Clone and start with one command:
+git clone https://github.com/Pranav-node/internet-merger.git
+cd internet-merger
+python run.py</code></pre>
+      <div style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">
+        Requires Python 3.10+ and Node.js 18+. <code>run.py</code> auto-installs dependencies and launches the application.
+      </div>
+    </div>
+  </div>
+</Layout>

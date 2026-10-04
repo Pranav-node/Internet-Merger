@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="How Internet Merger Works — Multi-Link Download Architecture"
+  description="Technical breakdown of multi-link socket binding via IP_UNICAST_IF, HTTP Range chunking, and parallel stream reassembly on Windows."
+  canonicalPath="/how-it-works"
+>
+  <div class="container-narrow" style="padding-top: 54px; padding-bottom: 72px;">
+    <div style="margin-bottom: 36px;">
+      <span class="badge badge-success" style="margin-bottom: 12px;">Under the Hood</span>
+      <h1 style="font-size: 36px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px;">
+        How Multi-Link Download Bonding Works
+      </h1>
+      <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.6;">
+        A technical breakdown of how Internet Merger forces outbound TCP sockets across distinct physical network cards and reassembles fragmented byte streams in parallel.
+      </p>
+    </div>
+
+    <!-- Step 1 -->
+    <section style="margin-bottom: 40px;">
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px; color: var(--text);">
+        1. The Single-Route Operating System Bottleneck
+      </h2>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px;">
+        When you have both Wi-Fi and Ethernet active on Windows, Windows consults its internal IP routing table. The network adapter with the lowest <strong>route metric</strong> (usually Ethernet) is crowned the primary default gateway.
+      </p>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px;">
+        Standard browsers (Chrome, Edge, Firefox) make standard <code>connect()</code> socket calls without specifying a source interface. Consequently, the OS routes 100% of their traffic over that single default gateway. Your second connection sits completely idle.
+      </p>
+      <div class="card" style="background-color: var(--bg-subtle); padding: 18px; font-size: 13px;">
+        <strong>Traditional Browser:</strong> 1 Default Route &rarr; 1 Network Adapter &rarr; Single Link Bottleneck.<br />
+        <strong>Internet Merger:</strong> <code>N</code> Dual-Stack Sockets &rarr; <code>N</code> Specific Physical Network Adapters concurrently.
+      </div>
+    </section>
+
+    <!-- Step 2 -->
+    <section style="margin-bottom: 40px;">
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px; color: var(--text);">
+        2. Interface Socket Pinning: IP_UNICAST_IF
+      </h2>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px;">
+        To force packets over a specific physical adapter, simply binding to the local IP address (<code>bind(ip, 0)</code>) is insufficient on modern Windows, because Windows uses a <em>Weak Host Routing Model</em> where outbound packets can still exit through the primary default gateway.
+      </p>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px;">
+        Internet Merger solves this by configuring low-level socket options:
+      </p>
+      <ul style="padding-left: 20px; font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px;">
+        <li><strong>Windows:</strong> Queries interface indices with <code>GetAdaptersAddresses</code> and applies Winsock socket option <code>IP_UNICAST_IF</code> (value 31). This forces the Windows TCP/IP stack to emit outbound SYN packets exclusively on that hardware interface.</li>
+        <li><strong>Linux:</strong> Invokes <code>SO_BINDTODEVICE</code> on the socket descriptor to bind directly to network interfaces (e.g. <code>eth0</code>, <code>wlan0</code>).</li>
+        <li><strong>macOS:</strong> Configures <code>IP_BOUND_IF</code> with the BSD network index.</li>
+      </ul>
+      <pre><code># Winsock option 31 on Windows socket
+sock.setsockopt(socket.IPPROTO_IP, 31, struct.pack("!I", if_index))
+sock.bind((interface_ip, 0))</code></pre>
+    </section>
+
+    <!-- Step 3 -->
+    <section style="margin-bottom: 40px;">
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px; color: var(--text);">
+        3. URL Probing & HTTP Range Chunking
+      </h2>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px;">
+        Before launching parallel downloads, Internet Merger probes the target URL with a single-byte request:
+      </p>
+      <pre><code>GET /ubuntu.iso HTTP/1.1
+Host: releases.ubuntu.com
+Range: bytes=0-0</code></pre>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px;">
+        If the server answers with <code>HTTP 206 Partial Content</code> and specifies <code>Content-Range: bytes 0-0/5839210496</code>, the engine knows the file supports arbitrary slicing. The file is partitioned into atomic 4 MB chunks (e.g. <code>bytes=0-4194303</code>, <code>bytes=4194304-8388607</code>, ...).
+      </p>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7;">
+        These chunks enter an asynchronous work queue. Multiple worker coroutines—each pinned to a specific network link—pull items from this shared queue. If Link 1 is faster than Link 2, it automatically fetches more chunks, delivering natural load balancing without static quotas.
+      </p>
+    </section>
+
+    <!-- Step 4 -->
+    <section style="margin-bottom: 40px;">
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px; color: var(--text);">
+        4. Sparse Preallocation & Resumption Map
+      </h2>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px;">
+        To prevent memory exhaustion on multi-gigabyte downloads, chunks are written straight to their exact byte offsets on disk as they stream in.
+      </p>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px;">
+        The target file is preallocated on disk. A checkpoint file (<code>&lt;filename&gt;.merger.json</code>) continuously tracks completed chunk indices. If your computer sleeps, restarts, or your mobile tethering drops, opening the app automatically detects the checkpoint and resumes only the missing chunks.
+      </p>
+    </section>
+
+    <!-- Step 5 -->
+    <section>
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px; color: var(--text);">
+        5. Dedicated Asynchronous Disk Writer Thread
+      </h2>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px;">
+        Disk I/O stalls (especially on mechanical drives or slower USB disks) can block network event loops. Internet Merger offloads all file operations to a dedicated background batch writer thread with a buffered queue. The network sockets continue pulling packets at wire speed while the writer flushes in the background.
+      </p>
+    </section>
+  </div>
+</Layout>

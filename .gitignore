@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+
+# PyInstaller / Executable build artifacts
+build/
+dist/
+*.zip
+
+# Frontend build outputs & dependencies
+node_modules/
+frontend/dist/
+site/node_modules/
+site/.astro/
+site/dist/
+
+# Test downloads & scratch files
+downloads/
+scratch_test_downloads/
+*.merger.json
+.chrome_temp/
+.chrome_temp2/
+*.log
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini

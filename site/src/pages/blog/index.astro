@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    title: "How to Combine Wi-Fi and USB Tethering for Faster Downloads",
+    slug: "/blog/how-to-combine-wifi-and-usb-tethering",
+    description: "Step-by-step guide to merging home Wi-Fi and smartphone 4G/5G USB tethering on Windows for combined download speed.",
+    date: "October 4, 2026",
+    readTime: "4 min read",
+    tag: "How-To"
+  },
+  {
+    title: "Why Two Connections from the Same Router Don't Add Up",
+    slug: "/blog/why-two-connections-from-same-router-dont-add-up",
+    description: "An honest look at network physics: why connecting both Wi-Fi and Ethernet to the same home router will not double your internet speed.",
+    date: "October 3, 2026",
+    readTime: "3 min read",
+    tag: "Deep Dive"
+  },
+  {
+    title: "How to Fix WinError 10013 When a VPN Blocks Your Network Adapter",
+    slug: "/blog/fix-winerror-10013-vpn-blocks-network-adapter",
+    description: "Troubleshooting socket permission errors on Windows when corporate or consumer VPN drivers seize network routes.",
+    date: "October 2, 2026",
+    readTime: "3 min read",
+    tag: "Troubleshooting"
+  }
+];
+---
+
+<Layout
+  title="Guides & Benchmarks — Internet Merger Knowledge Base"
+  description="Technical guides, tutorials, and benchmarks on multi-link downloading, combining Wi-Fi with mobile tethering, and network routing."
+  canonicalPath="/blog"
+>
+  <div class="container-narrow" style="padding-top: 54px; padding-bottom: 72px;">
+    <div style="margin-bottom: 40px; text-align: center;">
+      <span class="badge badge-success" style="margin-bottom: 12px;">Knowledge Base</span>
+      <h1 style="font-size: 36px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px;">
+        Guides, How-Tos & Benchmarks
+      </h1>
+      <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.6;">
+        Practical tutorials, real network measurements, and honest technical explanations for multi-link bonding.
+      </p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      {posts.map((post) => (
+        <a href={post.slug} class="card" style="text-decoration: none; color: inherit; display: block;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 12px;">
+            <span class="badge">{post.tag}</span>
+            <span style="color: var(--text-secondary);">{post.date} &bull; {post.readTime}</span>
+          </div>
+          <h2 style="font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 8px;">
+            {post.title}
+          </h2>
+          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">
+            {post.description}
+          </p>
+          <div style="margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--accent);">
+            Read Guide &rarr;
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Privacy Policy — Internet Merger (Zero Data Collection)"
+  description="Internet Merger does not collect personal data, telemetry, analytics, or download URLs. Learn about our local-first, zero-tracker privacy policy."
+  canonicalPath="/privacy"
+>
+  <div class="container-narrow" style="padding-top: 54px; padding-bottom: 72px;">
+    <div style="margin-bottom: 36px;">
+      <span class="badge badge-success" style="margin-bottom: 12px;">Zero Telemetry</span>
+      <h1 style="font-size: 36px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px;">
+        Privacy Policy & Terms
+      </h1>
+      <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.6;">
+        Last updated: October 4, 2026. Internet Merger is built with a strict local-first philosophy. We collect zero data.
+      </p>
+    </div>
+
+    <div class="card" style="margin-bottom: 30px; border-left: 4px solid var(--status-success);">
+      <h2 style="font-size: 19px; font-weight: 700; margin-bottom: 10px; color: var(--text);">
+        Summary: We Collect Absolutely Nothing
+      </h2>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+        Internet Merger runs entirely on your local machine (<code>127.0.0.1</code>). It has no telemetry, no tracking cookies, no analytics scripts, no advertising SDKs, and no external servers recording your downloads.
+      </p>
+    </div>
+
+    <section style="margin-bottom: 32px;">
+      <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">1. Information Handled by the Application</h2>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 10px;">
+        When you use Internet Merger, all data remains strictly confined to your personal computer:
+      </p>
+      <ul style="padding-left: 20px; font-size: 14px; color: var(--text-secondary); line-height: 1.8;">
+        <li><strong>Download URLs:</strong> Processed exclusively in local memory and saved on your disk to persist resumes. URLs are never transmitted to us or any central server.</li>
+        <li><strong>Network Adapters:</strong> Your local IP addresses and adapter names are inspected by the OS API solely to configure outbound TCP socket routing.</li>
+        <li><strong>Preferences & History:</strong> Saved locally in <code>%APPDATA%\InternetMerger\settings.json</code> and <code>history.json</code> on Windows. You can clear this history anytime in the app UI or delete the folder.</li>
+      </ul>
+    </section>
+
+    <section style="margin-bottom: 32px;">
+      <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">2. Network Connections Made by the App</h2>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+        The software connects <em>only</em> to the specific download URLs that you explicitly supply in the application interface. No background diagnostic pings, no license verification checks, and no telemetry calls are ever made.
+      </p>
+    </section>
+
+    <section style="margin-bottom: 32px;">
+      <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">3. Carrier & ISP Terms of Service Notice</h2>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+        Users are responsible for complying with their Internet Service Provider (ISP) and mobile network carrier contracts. Some mobile phone providers have specific policies or bandwidth limits regarding cellular tethering. Users are also responsible for verifying that their downloads adhere to the terms and copyrights of the respective file hosts.
+      </p>
+    </section>
+
+    <section>
+      <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">4. Disclaimer of Warranty</h2>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+        Internet Merger is provided "as is", without warranty of any kind, express or implied. Under no circumstances shall the authors or copyright holders be liable for any claim, damages, or other liability arising from the use of this software.
+      </p>
+    </section>
+  </div>
+</Layout>

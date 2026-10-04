@@ -1,0 +1,90 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Fix WinError 10013 When a VPN Blocks Network Adapters"
+  description="How to resolve Python socket WinError 10013 forbidden access permissions when VPN or firewall drivers block secondary network adapters."
+  canonicalPath="/blog/fix-winerror-10013-vpn-blocks-network-adapter"
+  ogType="article"
+>
+  <article class="container-narrow" style="padding-top: 54px; padding-bottom: 72px;">
+    <div style="margin-bottom: 30px;">
+      <a href="/blog" style="font-size: 13px; color: var(--text-secondary);">&larr; Back to Guides</a>
+      <div style="margin-top: 14px; margin-bottom: 10px;">
+        <span class="badge">Windows Troubleshooting</span>
+        <span style="font-size: 12px; color: var(--text-secondary); margin-left: 10px;">Published October 2, 2026 &bull; 3 min read</span>
+      </div>
+      <h1 style="font-size: 34px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.25; margin-bottom: 16px;">
+        Fix WinError 10013 When a VPN Blocks Network Adapters
+      </h1>
+      <p style="font-size: 17px; color: var(--text-secondary); line-height: 1.6;">
+        If you encounter <code>OSError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions</code> on Windows, here is what causes it and how to fix it immediately.
+      </p>
+    </div>
+
+    <!-- Section 1 -->
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">
+        What Causes WinError 10013?
+      </h2>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+        Winsock Error 10013 (<code>WSAEACCES</code>) occurs when the operating system kernel or a network driver explicitly forbids a socket from binding to an IP address or interface.
+      </p>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+        The two most common culprits are:
+      </p>
+      <ol style="padding-left: 20px; font-size: 14px; color: var(--text-secondary); line-height: 1.8;">
+        <li><strong>Active VPN Software (Split-Tunneling Disabled):</strong> VPN clients (such as Cisco AnyConnect, GlobalProtect, NordVPN, WireGuard) install a <em>Windows Filtering Platform (WFP)</em> driver. This driver creates a kernel-level rule mandating that all outbound packets must go into the virtual TUN/TAP tunnel, dropping attempts to bind to physical Wi-Fi or Ethernet interfaces.</li>
+        <li><strong>Port Exclusion Ranges (Hyper-V / WSL):</strong> Windows reserved dynamic port ranges for virtualization can occasionally collide with standard port allocations.</li>
+      </ol>
+    </section>
+
+    <!-- Solution 1 -->
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">
+        Solution 1: Pause or Disconnect Your VPN Client
+      </h2>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+        If you are attempting to bond multiple internet connections (e.g. Wi-Fi + Mobile Tethering), VPN software inherently conflicts with multi-adapter routing because VPN tunnels are single-adapter by design.
+      </p>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7;">
+        Simply pause or disconnect the VPN client while running your high-speed multi-link download. Once the file finishes downloading, you can re-enable your VPN.
+      </p>
+    </section>
+
+    <!-- Solution 2 -->
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">
+        Solution 2: Enable Split Tunneling in VPN Settings
+      </h2>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+        If you must keep your VPN running for corporate intranet access:
+      </p>
+      <ul style="padding-left: 20px; font-size: 14px; color: var(--text-secondary); line-height: 1.8;">
+        <li>Open your VPN client settings.</li>
+        <li>Locate <strong>Split Tunneling</strong> or <strong>Allow local network access</strong>.</li>
+        <li>Enable split tunneling so the VPN driver does not hijack physical adapter traffic.</li>
+      </ul>
+    </section>
+
+    <!-- Solution 3 -->
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">
+        Solution 3: Check Excluded Port Ranges
+      </h2>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+        To check if Windows Hyper-V or NAT has reserved your port range, run PowerShell as Administrator:
+      </p>
+      <pre><code>netsh int ipv4 show excludedportrange protocol=tcp</code></pre>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7;">
+        Internet Merger automatically scans for and binds to open ports (defaulting to 8000, 8001, etc.), avoiding conflicting port ranges automatically.
+      </p>
+    </section>
+
+    <div style="border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 13px; color: var(--text-secondary);">&larr; <a href="/blog">Back to all guides</a></span>
+      <a href="/download" class="btn btn-secondary" style="font-size: 13px;">Download Internet Merger</a>
+    </div>
+  </article>
+</Layout>

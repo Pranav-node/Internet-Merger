@@ -1,0 +1,310 @@
+/* ==========================================================================
+   Internet Merger — Stitch-Matched Utilitarian Theme
+   ========================================================================== */
+
+:root {
+  /* User-Specified Palette — Light */
+  --bg-page: #F6F4EF;
+  --bg-surface: #FFFFFF;
+  --bg-raised: #FFFFFF;
+  --bg-subtle: #F0EDE5;
+  --bg-hover: #EAE6DB;
+  --border: #E4E0D6;
+  --border-strong: #CDC8BC;
+
+  --text: #17181C;
+  --text-muted: #66697A;
+  --text-secondary: #66697A;
+
+  /* Accent */
+  --accent: #2B5CE6;
+  --accent-hover: #2349BD;
+  --accent-focus: rgba(43, 92, 230, 0.22);
+  --accent-fg: #FFFFFF;
+
+  /* Status (Small dot + text only, never big fills) */
+  --status-success: #2E9E5B;
+  --status-warning: #C98A00;
+  --status-error: #D13438;
+
+  --status-success-bg: rgba(46, 158, 91, 0.08);
+  --status-warning-bg: rgba(201, 138, 0, 0.08);
+  --status-error-bg: rgba(209, 52, 56, 0.08);
+
+  /* Link Colors (Used consistently everywhere: chip, chart line, segmented bar) */
+  --link-0: #0E9F8E; /* Teal */
+  --link-1: #E8742C; /* Orange */
+  --link-2: #8A5CD0; /* Purple */
+  --link-3: #D63E7A; /* Magenta */
+
+  /* Radii & Shadows */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+
+  /* Typography */
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Transition timings: 150ms easing */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  /* User-Specified Palette — Dark */
+  --bg-page: #0F1115;
+  --bg-surface: #171A20;
+  --bg-raised: #1E222A;
+  --bg-subtle: #222630;
+  --bg-hover: #2A2F3B;
+  --border: #2A2F39;
+  --border-strong: #3A4150;
+
+  --text: #ECEEF2;
+  --text-muted: #9AA1AE;
+  --text-secondary: #9AA1AE;
+
+  /* Accent */
+  --accent: #6C8CFF;
+  --accent-hover: #8AA4FF;
+  --accent-focus: rgba(108, 140, 255, 0.25);
+  --accent-fg: #0F1115;
+
+  /* Status */
+  --status-success: #2E9E5B;
+  --status-warning: #C98A00;
+  --status-error: #D13438;
+
+  --status-success-bg: rgba(46, 158, 91, 0.12);
+  --status-warning-bg: rgba(201, 138, 0, 0.12);
+  --status-error-bg: rgba(209, 52, 56, 0.12);
+
+  /* Link Colors */
+  --link-0: #0E9F8E;
+  --link-1: #E8742C;
+  --link-2: #8A5CD0;
+  --link-3: #D63E7A;
+}
+
+/* ==========================================================================
+   Base Styles & Reset
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--bg-page);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Monospace with tabular numbers */
+code, pre, .mono, .tabular-nums {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Key Metric Big Numerals */
+.metric-numeral {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .metric-numeral {
+    font-size: 32px;
+  }
+}
+
+/* Utilitarian Flat Cards */
+.stitch-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: border-color var(--transition-fast);
+}
+
+.stitch-card-subtle {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+
+/* Buttons */
+button, .btn {
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background-color: var(--bg-surface);
+  color: var(--text);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  user-select: none;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+button:hover:not(:disabled), .btn:hover:not(:disabled) {
+  background-color: var(--bg-hover);
+  border-color: var(--border-strong);
+}
+
+button:focus-visible, .btn:focus-visible, input:focus-visible, select:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-focus);
+}
+
+button:disabled, .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Primary Button: Flat accent fill */
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 11.5px;
+  border-radius: var(--radius-sm);
+}
+
+.btn-danger {
+  color: var(--status-error);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: var(--status-error-bg);
+  border-color: var(--status-error);
+}
+
+/* Inputs */
+input[type="text"],
+input[type="url"],
+input[type="number"],
+select {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background-color: var(--bg-surface);
+  color: var(--text);
+  outline: none;
+  width: 100%;
+  transition: border-color var(--transition-fast);
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-focus);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--accent);
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+}
+
+/* Status Dot: small dot only, never big fills */
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.status-dot.active, .status-dot.downloading, .status-dot.completed {
+  background-color: var(--status-success);
+}
+
+.status-dot.paused, .status-dot.warning {
+  background-color: var(--status-warning);
+}
+
+.status-dot.failed, .status-dot.cancelled, .status-dot.error {
+  background-color: var(--status-error);
+}
+
+.status-dot.queued, .status-dot.probing {
+  background-color: var(--text-muted);
+}
+
+/* Status Chip: Text + small dot only, subtle 1px border */
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background-color: var(--bg-subtle);
+  color: var(--text);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.status-chip.success {
+  border-color: rgba(46, 158, 91, 0.35);
+  color: var(--status-success);
+}
+
+.status-chip.warning {
+  border-color: rgba(201, 138, 0, 0.35);
+  color: var(--status-warning);
+}
+
+.status-chip.error {
+  border-color: rgba(209, 52, 56, 0.35);
+  color: var(--status-error);
+}
+
+/* Link Color Classes (Consistently applied) */
+.color-link-0 { color: var(--link-0); }
+.color-link-1 { color: var(--link-1); }
+.color-link-2 { color: var(--link-2); }
+.color-link-3 { color: var(--link-3); }
+
+.bg-link-0 { background-color: var(--link-0); }
+.bg-link-1 { background-color: var(--link-1); }
+.bg-link-2 { background-color: var(--link-2); }
+.bg-link-3 { background-color: var(--link-3); }

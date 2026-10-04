@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Frequently Asked Questions — Internet Merger Download Manager"
+  description="Answers to common questions about multi-connection bonding, router limitations, VPN conflicts, carrier tethering, and browser compatibility."
+  canonicalPath="/faq"
+>
+  <div class="container-narrow" style="padding-top: 54px; padding-bottom: 72px;">
+    <div style="margin-bottom: 40px; text-align: center;">
+      <span class="badge badge-success" style="margin-bottom: 12px;">Help & Troubleshooting</span>
+      <h1 style="font-size: 36px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px;">
+        Frequently Asked Questions & Troubleshooting
+      </h1>
+      <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.6;">
+        Honest answers to common technical questions about multi-link bonding, network hardware, and operating system limits.
+      </p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <!-- Q1 -->
+      <div class="card">
+        <h2 style="font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--text);">
+          Why don't speeds add up when Wi-Fi and Ethernet connect to the same router?
+        </h2>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 10px;">
+          Because both your Wi-Fi and Ethernet adapters funnel into the exact same home router and share one physical broadband fiber or cable line coming into your building.
+        </p>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+          If your broadband plan is 100 Mbps, splitting traffic between Wi-Fi and Ethernet simply divides that 100 Mbps between them (e.g. 50 + 50 = 100). The only benefit on a single router is if the remote file server imposes per-connection speed limits, in which case opening parallel streams can achieve higher server throughput.
+        </p>
+      </div>
+
+      <!-- Q2 -->
+      <div class="card">
+        <h2 style="font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--text);">
+          What setup is required to actually double my download speed?
+        </h2>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+          You need <strong>genuinely independent internet gateways</strong>. For example:
+        </p>
+        <ul style="padding-left: 20px; font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-top: 8px;">
+          <li><strong>Link 1:</strong> Home Wi-Fi connected to your home fiber/cable broadband router (e.g. 40 Mbps).</li>
+          <li><strong>Link 2:</strong> Your smartphone connected to your PC via USB cable with <em>USB Tethering</em> enabled on a 4G/5G mobile carrier (e.g. 35 Mbps).</li>
+        </ul>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-top: 8px;">
+          Because Link 1 routes through your home ISP and Link 2 routes through your cellular tower, their bandwidth combines additively: ~75 Mbps total!
+        </p>
+      </div>
+
+      <!-- Q3 -->
+      <div class="card">
+        <h2 style="font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--text);">
+          Why do I see "WinError 10013: An attempt was made to access a socket in a way forbidden by its access permissions"?
+        </h2>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 10px;">
+          This error occurs when a <strong>VPN software client</strong> or corporate security software (such as Cisco AnyConnect, NordVPN, ExpressVPN, or Windows Filtering Platform firewall rules) is running on your machine.
+        </p>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+          VPN drivers frequently capture all network traffic and explicitly block applications from sending raw packets through secondary physical network adapters. To resolve this, pause or disconnect the VPN while accelerating multi-link downloads.
+        </p>
+      </div>
+
+      <!-- Q4 -->
+      <div class="card">
+        <h2 style="font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--text);">
+          Does this work on any download URL?
+        </h2>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+          Internet Merger works with standard direct HTTP and HTTPS download links that support <code>HTTP Range</code> (HTTP 206 Partial Content). Most software distributions, Linux ISOs, game updates, drivers, and file hosts support this. If a server does not support Range requests, Internet Merger automatically switches to single-stream download mode so your download still completes cleanly.
+        </p>
+      </div>
+
+      <!-- Q5 -->
+      <div class="card">
+        <h2 style="font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--text);">
+          Does Internet Merger speed up YouTube, video streaming, or gaming?
+        </h2>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+          No. Internet Merger is an accelerated file download manager, not a system-wide VPN or virtual network adapter. Accelerating system-wide streaming or gaming across multiple links requires kernel-level MPTCP (Multipath TCP) or remote multi-wan bonding servers like Speedify.
+        </p>
+      </div>
+
+      <!-- Q6 -->
+      <div class="card">
+        <h2 style="font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--text);">
+          Can I choose custom download folders across different drives?
+        </h2>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+          Yes! Internet Merger includes a native <strong>Browse...</strong> button in both the New Download dialog and the Settings tab. You can click to open your Windows Explorer folder picker and choose any download destination (e.g. <code>D:\Downloads</code>, an external SSD, or a secondary drive).
+        </p>
+      </div>
+
+      <!-- Q7 -->
+      <div class="card">
+        <h2 style="font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--text);">
+          How does the session authentication token keep my computer safe?
+        </h2>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+          Internet Merger binds strictly to <code>127.0.0.1</code> (loopback) and generates a fresh 256-bit cryptographically random token on each launch. Any REST call or WebSocket connection must provide this token and have a matching loopback Origin. External websites you visit in your browser cannot execute downloads, browse directories, or tamper with your files.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

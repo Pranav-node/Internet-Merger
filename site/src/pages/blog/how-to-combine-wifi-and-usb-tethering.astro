@@ -1,0 +1,99 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="How to Combine Wi-Fi and USB Tethering for Faster Downloads"
+  description="Learn how to combine your home Wi-Fi and smartphone 4G/5G USB tethering on Windows to achieve additive download speeds with Internet Merger."
+  canonicalPath="/blog/how-to-combine-wifi-and-usb-tethering"
+  ogType="article"
+>
+  <article class="container-narrow" style="padding-top: 54px; padding-bottom: 72px;">
+    <div style="margin-bottom: 30px;">
+      <a href="/blog" style="font-size: 13px; color: var(--text-secondary);">&larr; Back to Guides</a>
+      <div style="margin-top: 14px; margin-bottom: 10px;">
+        <span class="badge">How-To Tutorial</span>
+        <span style="font-size: 12px; color: var(--text-secondary); margin-left: 10px;">Published October 4, 2026 &bull; 4 min read</span>
+      </div>
+      <h1 style="font-size: 34px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.25; margin-bottom: 16px;">
+        How to Combine Wi-Fi and USB Tethering for Faster Downloads
+      </h1>
+      <p style="font-size: 17px; color: var(--text-secondary); line-height: 1.6;">
+        If you have both a home broadband Wi-Fi connection and an Android or iPhone with 4G/5G data, you can bond both connections simultaneously to dramatically accelerate large file downloads.
+      </p>
+    </div>
+
+    <div class="card" style="margin-bottom: 32px; background-color: var(--bg-subtle);">
+      <div style="font-weight: 600; margin-bottom: 6px;">Why This Works:</div>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">
+        Unlike connecting Ethernet and Wi-Fi to the same router, Wi-Fi and cellular USB tethering utilize <strong>two completely separate internet gateways</strong>. Wi-Fi uses your home broadband ISP, while USB tethering routes through your mobile carrier's cellular base station.
+      </p>
+    </div>
+
+    <!-- Step 1 -->
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">
+        Step 1: Connect to Your Home Wi-Fi
+      </h2>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+        Make sure your Windows PC or laptop is connected to your primary Wi-Fi network as usual. Verify that web browsing is working normally on this connection.
+      </p>
+    </section>
+
+    <!-- Step 2 -->
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">
+        Step 2: Enable USB Tethering on Your Phone
+      </h2>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+        Connect your phone to your PC using a high-quality USB data cable.
+      </p>
+      <ul style="padding-left: 20px; font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 14px;">
+        <li><strong>On Android:</strong> Open <em>Settings</em> &rarr; <em>Network & internet</em> (or <em>Connections</em>) &rarr; <em>Hotspot & tethering</em> &rarr; Toggle on <strong>USB tethering</strong>.</li>
+        <li><strong>On iPhone:</strong> Open <em>Settings</em> &rarr; <em>Personal Hotspot</em> &rarr; Toggle on <strong>Allow Others to Join</strong>. When plugged in via USB, select "Trust this Computer".</li>
+      </ul>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7;">
+        Windows will instantly detect a new network adapter named "Remote NDIS based Internet Sharing Device" or "Apple Mobile Device Ethernet".
+      </p>
+    </section>
+
+    <!-- Step 3 -->
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">
+        Step 3: Launch Internet Merger
+      </h2>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+        Open Internet Merger by double-clicking <code>InternetMerger.exe</code>. Your browser will automatically open your local monitoring dashboard.
+      </p>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+        Click <strong>+ New Download</strong>. Under <em>Bonded Interfaces</em>, you will see both of your active adapters listed:
+      </p>
+      <pre><code>[✓] Wi-Fi (192.168.1.104)       - Link 1 (Home Broadband)
+[✓] Ethernet 2 (192.168.42.129) - Link 2 (Phone USB Tethering)</code></pre>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7;">
+        Make sure both checkboxes are selected.
+      </p>
+    </section>
+
+    <!-- Step 4 -->
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">
+        Step 4: Start Your Download & Watch the Combined Speed
+      </h2>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px;">
+        Paste your download URL (e.g. an operating system ISO, driver update, or zip file). Click <strong>Start Download</strong>.
+      </p>
+      <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7;">
+        Internet Merger will split the file into concurrent 4 MB byte chunks, pulling alternating chunks across both links. You will see both speed curves surging in the real-time visualizer, reaching the sum of both connection speeds!
+      </p>
+    </section>
+
+    <div class="card" style="text-align: center; padding: 32px; margin-top: 48px; border: 2px solid var(--accent);">
+      <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">Try It Yourself Today</h3>
+      <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 20px;">
+        Download the free, open-source standalone package for Windows. Zero setup required.
+      </p>
+      <a href="/download" class="btn btn-primary btn-lg">Download Internet Merger Free</a>
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,226 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Internet Merger",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "UtilitiesApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/Pranav-node/internet-merger/releases/latest",
+  "description": "Combine several internet connections to speed up large file downloads by concurrently pulling byte chunks across separate network adapters.",
+  "softwareVersion": "0.1.0",
+  "license": "https://opensource.org/licenses/MIT"
+};
+---
+
+<Layout
+  title="Internet Merger — Combine Internet Connections for Fast Downloads"
+  description="Free open-source Windows download accelerator that merges Wi-Fi, Ethernet, and 4G/5G mobile tethering concurrently across physical adapters."
+  canonicalPath="/"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div style="margin-bottom: 16px;">
+        <span class="badge badge-success">v0.1.0 Released &bull; Zero Admin Rights Required</span>
+      </div>
+
+      <h1 class="hero-title">
+        Combine Multiple Internet Connections<br />for Faster Downloads
+      </h1>
+
+      <p class="hero-subtitle">
+        Merge your Home Wi-Fi, USB 4G/5G mobile tethering, and Ethernet into a single high-speed download pipe. Pulls concurrent byte chunks over separate network adapters and reassembles them bit-by-bit on disk.
+      </p>
+
+      <div class="hero-cta">
+        <a href="/download" class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Download for Windows (Free)</span>
+        </a>
+        <a href="/how-it-works" class="btn btn-secondary btn-lg">
+          <span>How It Works</span>
+        </a>
+      </div>
+
+      <div style="font-size: 12px; color: var(--text-secondary); display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <span>✓ Windows 10 & 11 (64-bit)</span>
+        <span>✓ No Python/Node installation needed</span>
+        <span>✓ Open Source (MIT)</span>
+        <span>✓ 100% Local &bull; No Trackers</span>
+      </div>
+
+      <!-- Live Bandwidth Comparison Graphic -->
+      <div class="card" style="max-width: 780px; margin: 48px auto 0; text-align: left; padding: 24px; border: 1px solid var(--border-strong);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+          <span style="font-weight: 600; font-size: 13px; color: var(--text);">Measured Download Throughput</span>
+          <span class="mono" style="font-size: 12px; color: var(--status-success); font-weight: 600;">Merged Speed: 68.4 MB/s</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px;">
+              <span style="display: flex; align-items: center; gap: 6px;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background-color: var(--link-0);"></span>
+                <span style="font-weight: 600;">Link 1: Home Wi-Fi (Fiber)</span>
+              </span>
+              <span class="mono" style="color: var(--text-secondary);">32.1 MB/s (47%)</span>
+            </div>
+            <div style="height: 10px; background-color: var(--bg-subtle); border-radius: var(--radius-pill); overflow: hidden;">
+              <div style="width: 47%; height: 100%; background-color: var(--link-0); border-radius: var(--radius-pill);"></div>
+            </div>
+          </div>
+
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px;">
+              <span style="display: flex; align-items: center; gap: 6px;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background-color: var(--link-1);"></span>
+                <span style="font-weight: 600;">Link 2: Phone USB 5G Tethering</span>
+              </span>
+              <span class="mono" style="color: var(--text-secondary);">36.3 MB/s (53%)</span>
+            </div>
+            <div style="height: 10px; background-color: var(--bg-subtle); border-radius: var(--radius-pill); overflow: hidden;">
+              <div style="width: 53%; height: 100%; background-color: var(--link-1); border-radius: var(--radius-pill);"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 12px;">
+          <span style="color: var(--text-secondary);">Tested with ISO Ubuntu 24.04 (5.8 GB download)</span>
+          <span class="badge badge-success">Completed in 86s vs 181s single-link</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Capabilities -->
+  <section style="padding: 60px 0; border-top: 1px solid var(--border); background-color: var(--bg-surface);">
+    <div class="container">
+      <div style="text-align: center; max-width: 640px; margin: 0 auto 40px;">
+        <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em;">
+          Engineered for Raw Speed & Reliability
+        </h2>
+        <p style="color: var(--text-secondary); font-size: 15px;">
+          Standard web browsers use a single socket through your operating system's default network route. Internet Merger bypasses standard single-route limits.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div style="color: var(--accent); margin-bottom: 14px;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+          </div>
+          <h3 style="font-size: 17px; font-weight: 600; margin-bottom: 8px;">Multi-Interface Socket Pinning</h3>
+          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">
+            Forces outbound TCP traffic over specific physical hardware using <code>IP_UNICAST_IF</code> on Windows and <code>SO_BINDTODEVICE</code> on Linux, preventing the OS from consolidating onto one adapter.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="color: var(--link-0); margin-bottom: 14px;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <h3 style="font-size: 17px; font-weight: 600; margin-bottom: 8px;">Dynamic Chunk Work Queue</h3>
+          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">
+            Files are sliced into atomic 4 MB chunks. Faster connections automatically grab more work items without static quotas, self-optimizing under fluctuating cellular reception.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="color: var(--link-1); margin-bottom: 14px;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 style="font-size: 17px; font-weight: 600; margin-bottom: 8px;">Zero Admin Rights & Sandboxed</h3>
+          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">
+            Stores state and downloads in <code>%APPDATA%\InternetMerger</code>. Binds exclusively to <code>127.0.0.1</code> with per-session token authorization, DNS rebinding guards, and traversal shields.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Honest Limits Callout Section -->
+  <section style="padding: 60px 0;">
+    <div class="container-narrow">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <h2 style="font-size: 26px; font-weight: 700; margin-bottom: 10px;">
+          Honest Technical Limits
+        </h2>
+        <p style="color: var(--text-secondary); font-size: 15px;">
+          We believe in transparency. Network bonding depends on physical routing:
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Setup Configuration</th>
+              <th>Bandwidth Outcome</th>
+              <th>Technical Explanation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Two adapters on the SAME router</strong><br /><span style="font-size: 11px; color: var(--text-secondary);">e.g. Wi-Fi + Ethernet to one home box</span></td>
+              <td><span style="color: var(--status-warning); font-weight: 600;">Speeds do not add up</span></td>
+              <td>Both links share the same broadband uplink. Bonding only helps if the remote server limits per-connection speed.</td>
+            </tr>
+            <tr>
+              <td><strong>Genuinely independent links</strong><br /><span style="font-size: 11px; color: var(--text-secondary);">e.g. Home Fiber + 4G/5G Phone Tethering</span></td>
+              <td><span style="color: var(--status-success); font-weight: 600;">True additive speed (1+1=2)</span></td>
+              <td>Packets travel through physically separate carrier backbones and independent internet gateways.</td>
+            </tr>
+            <tr>
+              <td><strong>Active Corporate VPN adapters</strong><br /><span style="font-size: 11px; color: var(--text-secondary);">WinError 10013</span></td>
+              <td><span style="color: var(--status-error); font-weight: 600;">Packets blocked on physical link</span></td>
+              <td>VPN firewall drivers lock routing to their tunnel. Pause VPN while multi-link merging.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-warning">
+        <strong>Important:</strong> The remote download server must support HTTP Range requests (HTTP 206 Partial Content). If a server doesn't support Range, Internet Merger seamlessly falls back to a clean single stream.
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section style="padding: 64px 0; border-top: 1px solid var(--border); background-color: var(--bg-surface); text-align: center;">
+    <div class="container">
+      <h2 style="font-size: 30px; font-weight: 800; margin-bottom: 16px;">
+        Ready to Speed Up Your Downloads?
+      </h2>
+      <p style="color: var(--text-secondary); font-size: 16px; margin-bottom: 28px; max-width: 540px; margin-left: auto; margin-right: auto;">
+        Download the standalone Windows package. Unzip and run—no dependencies, no installer, no admin elevation required.
+      </p>
+      <a href="/download" class="btn btn-primary btn-lg">
+        Download Internet Merger v0.1.0
+      </a>
+    </div>
+  </section>
+</Layout>

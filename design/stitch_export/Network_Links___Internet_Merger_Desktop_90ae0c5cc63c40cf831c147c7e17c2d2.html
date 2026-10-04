@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;background-color:#F8F8F8;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"brand-primary":"#E23744","brand-darkred":"#CB202D","on-surface-variant":"#5b403f","on-primary":"#ffffff","background":"#F8F8F8","primary-fixed":"#ffdad8","surface-bright":"#fcf9f8","error-container":"#ffdad6","on-background":"#1b1b1b","on-tertiary-fixed":"#00174b","on-tertiary":"#ffffff","primary-fixed-dim":"#ffb3b1","on-error-container":"#93000a","secondary-container":"#dd2f37","surface-container-highest":"#e5e2e1","on-tertiary-fixed-variant":"#003ea8","outline":"#8f6f6e","surface-container-low":"#f6f3f2","inverse-primary":"#ffb3b1","on-primary-fixed-variant":"#92001c","on-secondary-fixed":"#410005","outline-variant":"#e4bebc","on-primary-container":"#fffbff","primary-container":"#E23744","error":"#ba1a1a","on-secondary":"#ffffff","inverse-on-surface":"#f3f0ef","on-error":"#ffffff","secondary":"#CB202D","on-secondary-container":"#fffbff","tertiary-fixed-dim":"#b4c5ff","tertiary-container":"#316bf3","tertiary-fixed":"#dbe1ff","on-surface":"#1b1b1b","surface":"#F8F8F8","on-tertiary-container":"#fefcff","surface-container-high":"#eae7e7","surface-tint":"#E23744","surface-variant":"#e5e2e1","inverse-surface":"#313030","primary":"#E23744","secondary-fixed-dim":"#ffb3af","surface-dim":"#dcd9d9","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#930017","on-primary-fixed":"#410007","secondary-fixed":"#ffdad7","tertiary":"#0051d5","surface-container":"#f0eded"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"1rem","2xl":"1.25rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","space-md":"1rem","space-xl":"2rem","gutter-mobile":"0.75rem","gutter":"1.5rem","margin":"2rem","margin-mobile":"1rem","space-lg":"1.5rem","space-xs":"0.25rem"},"fontFamily":{"headline-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"metric-numeral":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"metric-numeral-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"metric-numeral":["44px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-xl":["30px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"headline-xl-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"metric-numeral-mobile":["32px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-[#F8F8F8] font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-100 shadow-[0_1px_8px_rgba(0,0,0,0.02)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm border-b border-gray-100/80"><img alt="Internet Merger Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V9ywWMKj3afBlHLud_OYf-dyUSHrs7B6RGgxc6bympVH9nMHcU4KL8xDW86586VhCBRvPr7fdDjbk25h2QJqucOtQUV7x42EJpovdsgVYe1k2oRnNk0i4ruNkyXsu_siMYPjb8losF_3eF10t-A1t0vFXQV3sSGTP_eZPYf1NOv25Cnd40JLaqCkZ4yBAuyCaocAKd2_ouP4OMlrqEgl6aXXLzR6QifGaSXs-G0Uc9nYXWsW0SM9R63wA"/></div><nav class="flex flex-col gap-1.5 px-space-sm mt-space-md"><a class="flex items-center justify-between px-space-md py-space-sm rounded-xl text-gray-600 hover:bg-gray-50 hover:text-on-surface transition-all" data-path="downloads" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">download</span><span class="font-label-lg text-label-lg">Downloads</span></div><span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 font-label-sm text-label-sm">3 active</span></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm transition-all bg-[#E23744] text-white font-label-lg rounded-xl shadow-[0_2px_10px_rgba(226,55,68,0.25)]" data-path="links" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-label-lg text-label-lg font-semibold">Links</span></div><span class="px-2 py-0.5 rounded-full bg-white/20 text-white font-label-sm text-label-sm font-bold">3 online</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-xl text-gray-600 hover:bg-gray-50 hover:text-on-surface transition-all" data-path="history" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">history</span><span class="font-label-lg text-label-lg">History</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-xl text-gray-600 hover:bg-gray-50 hover:text-on-surface transition-all" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-lg text-label-lg">Settings</span></div></a></nav></div><div class="p-space-md m-space-sm rounded-2xl bg-gray-50 border border-gray-100 flex flex-col gap-space-sm"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E23744] opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-[#E23744]"></span></span><span class="font-label-sm text-label-sm text-gray-500 uppercase tracking-wider">Throughput</span></div><span class="font-label-sm text-label-sm text-[#CB202D] font-bold">Bonded</span></div><div><div class="font-headline-sm text-headline-sm text-gray-900 font-bold">184.2 MB/s</div><p class="font-body-sm text-body-sm text-gray-500">Combined 3 Interfaces</p></div><div class="pt-space-xs flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span class="font-label-sm text-label-sm text-gray-500">Local Engine: Connected v2.4</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-[0_1px_6px_rgba(0,0,0,0.03)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs px-3 py-1 rounded-full bg-gray-100 border border-gray-200/60"><span class="h-2 w-2 rounded-full bg-emerald-500"></span><span class="font-label-md text-label-md text-gray-700 font-mono font-medium">127.0.0.1:6800</span></div><div class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-label-sm font-semibold border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span><span>Aggregation Engine Active</span></div><button class="flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200/70 text-gray-700 transition-all font-label-md text-label-md active:scale-95" onclick="showToast('Paused all active multi-link transfers')" type="button"><span class="material-symbols-outlined text-[18px]">pause_circle</span><span>Pause All</span></button></div><div class="flex items-center gap-space-md"><button class="h-9 px-4 rounded-full bg-[#E23744] hover:bg-[#CB202D] text-white transition-all flex items-center gap-1.5 shadow-[0_2px_8px_rgba(226,55,68,0.25)] font-label-lg text-label-lg active:scale-95" onclick="showToast('Initiating new multi-channel download task')" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>New Download</span></button><button class="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200/70 text-gray-700 flex items-center justify-center transition-all" onclick="showToast('Switched visual theme')" title="Toggle theme" type="button"><span class="material-symbols-outlined text-[18px]">light_mode</span></button><div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#E23744] to-red-400 flex items-center justify-center text-white font-bold text-xs shadow-sm">IM</div></div></header><main class="relative pt-16 bg-[#F8F8F8] min-h-screen"><div class="p-space-xl max-w-[1340px] mx-auto"><div class="flex flex-col w-full">
+<!-- Top Header Banner & Primary Actions -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg mb-space-lg">
+<div>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-gray-200/80 text-gray-700 font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+          Multi-Interface Topology
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold border border-emerald-100">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          Bonded Pool (3/4 Interfaces)
+        </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-gray-900 tracking-tight">Network Adapters &amp; Links</h1>
+<p class="font-body-md text-body-md text-gray-600 mt-1 max-w-2xl">
+        Manage connected internet routes, test latency and individual throughput, or run isolated benchmarks.
+      </p>
+</div>
+<!-- Primary Action Controls -->
+<div class="flex flex-wrap items-center gap-space-sm flex-shrink-0">
+<button class="h-10 px-5 rounded-full bg-[#E23744] hover:bg-[#CB202D] text-white font-label-lg text-label-lg transition-all flex items-center gap-2 shadow-[0_4px_12px_rgba(226,55,68,0.28)] active:scale-95" id="test-all-btn" onclick="runBenchmark(true)" type="button">
+<span class="material-symbols-outlined text-[19px]">play_circle</span>
+<span>Test All Links</span>
+</button>
+<button class="h-10 px-5 rounded-full bg-white hover:bg-gray-50 text-gray-800 font-label-lg text-label-lg transition-all flex items-center gap-2 border border-gray-200 shadow-sm active:scale-95" onclick="runBenchmark(false)" type="button">
+<span class="material-symbols-outlined text-[19px] text-[#CB202D]">query_stats</span>
+<span>Test each link alone</span>
+</button>
+<label class="flex items-center gap-2.5 px-3.5 py-2 rounded-full bg-white border border-gray-200 shadow-sm cursor-pointer select-none hover:bg-gray-50 transition-colors">
+<input checked="" class="sr-only peer" id="toggle-vpn-filter" onchange="toggleVpnCard(this)" type="checkbox"/>
+<div class="w-9 h-5 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#E23744]"></div>
+<span class="font-label-md text-label-md text-gray-700 font-medium">Show inactive and VPN adapters</span>
+</label>
+</div>
+</div>
+<!-- SECTION 3: "Test Each Link Alone" Benchmark Comparison Section -->
+<div class="bg-white rounded-2xl p-space-lg shadow-sm border border-gray-100 mb-space-xl transition-all">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-md border-b border-gray-100">
+<div>
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-red-50 text-[#E23744] flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+</span>
+<h2 class="font-headline-md text-headline-md text-gray-900">Isolated Link Benchmark (Single Route Speed)</h2>
+</div>
+<p class="font-body-sm text-body-sm text-gray-500 mt-0.5">
+          Compares raw download potential when traffic is routed exclusively through one interface.
+        </p>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-gray-50 border border-gray-200/80 font-label-sm text-label-sm text-gray-700">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">bolt</span>
+<span>Theoretical combined peak: <strong class="text-gray-900 font-bold">197.5 MB/s</strong></span>
+<span class="text-gray-300">•</span>
+<span>Efficiency: <strong class="text-emerald-700 font-bold">93%</strong></span>
+</div>
+</div>
+<!-- Comparison Horizontal Bar Chart -->
+<div class="mt-space-md space-y-3.5">
+<!-- Link 1 Bar: USB Tethering (iPhone 5G) -> 96.5 MB/s -->
+<div>
+<div class="flex items-center justify-between text-body-sm text-body-sm mb-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#7C3AED]"></span>
+<span class="font-semibold text-gray-900">USB Tethering (iPhone 5G)</span>
+<span class="text-xs px-2 py-0.2 rounded-full bg-purple-50 text-[#7C3AED] font-mono font-medium">en5</span>
+</div>
+<span class="font-bold text-gray-900 font-mono">96.5 MB/s <span class="text-xs text-gray-400 font-normal">/ 125 MB/s max</span></span>
+</div>
+<div class="w-full h-3.5 bg-gray-100 rounded-full overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-[#7C3AED] transition-all duration-1000 ease-out" style="width: 77.2%;"></div>
+</div>
+</div>
+<!-- Link 2 Bar: Home Wi-Fi 6 -> 74.2 MB/s -->
+<div>
+<div class="flex items-center justify-between text-body-sm text-body-sm mb-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#2563EB]"></span>
+<span class="font-semibold text-gray-900">Home Wi-Fi 6</span>
+<span class="text-xs px-2 py-0.2 rounded-full bg-blue-50 text-[#2563EB] font-mono font-medium">en0</span>
+</div>
+<span class="font-bold text-gray-900 font-mono">74.2 MB/s <span class="text-xs text-gray-400 font-normal">/ 125 MB/s max</span></span>
+</div>
+<div class="w-full h-3.5 bg-gray-100 rounded-full overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-[#2563EB] transition-all duration-1000 ease-out" style="width: 59.3%;"></div>
+</div>
+</div>
+<!-- Link 3 Bar: Office Gigabit Ethernet -> 26.8 MB/s -->
+<div>
+<div class="flex items-center justify-between text-body-sm text-body-sm mb-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#F59E0B]"></span>
+<span class="font-semibold text-gray-900">Office Gigabit Ethernet</span>
+<span class="text-xs px-2 py-0.2 rounded-full bg-amber-50 text-[#B45309] font-mono font-medium">en4</span>
+</div>
+<span class="font-bold text-gray-900 font-mono">26.8 MB/s <span class="text-xs text-gray-400 font-normal">/ 125 MB/s max</span></span>
+</div>
+<div class="w-full h-3.5 bg-gray-100 rounded-full overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-[#F59E0B] transition-all duration-1000 ease-out" style="width: 21.4%;"></div>
+</div>
+</div>
+<!-- Link 4 Bar: WireGuard VPN Tunnel -> 0 MB/s (Greyed out / Flagged) -->
+<div>
+<div class="flex items-center justify-between text-body-sm text-body-sm mb-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span>
+<span class="font-semibold text-gray-500 line-through">WireGuard VPN Tunnel</span>
+<span class="text-xs px-2 py-0.2 rounded-full bg-rose-50 text-rose-700 font-medium">Blocked Route</span>
+</div>
+<span class="font-bold text-rose-600 font-mono">0.0 MB/s <span class="text-xs text-rose-400 font-normal">(unresponsive)</span></span>
+</div>
+<div class="w-full h-3.5 bg-gray-100 rounded-full overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-rose-200 transition-all duration-500 ease-out" style="width: 2%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 4: Network Adapters List (4 Cards) -->
+<div class="mb-space-md flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-gray-900">Physical &amp; Virtual Interfaces</h3>
+<p class="font-body-sm text-body-sm text-gray-500">Live hardware links bonded together with real-time throughput metrics</p>
+</div>
+<span class="font-label-sm text-label-sm text-gray-500">4 total interfaces detected</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-lg mb-space-xl">
+<!-- Card 1: USB Tethering (iPhone 15 Pro) -> Channel Purple #7C3AED -->
+<div class="bg-white rounded-2xl p-space-lg shadow-sm border border-gray-100 flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-[#7C3AED]"></div>
+<div>
+<!-- Header row -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-xl bg-purple-50 text-[#7C3AED] flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">stay_current_portrait</span>
+</div>
+<div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold border border-emerald-100">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> ● UP • Active
+              </span>
+<h3 class="font-headline-sm text-headline-sm text-gray-900 mt-1">USB Tethering (iPhone 15 Pro)</h3>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input checked="" class="sr-only peer" onchange="toggleChannel(this, 'channel-iphone')" type="checkbox"/>
+<div class="w-10 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#7C3AED]"></div>
+</label>
+</div>
+<!-- Hardware details & Public IP badge -->
+<div class="mt-2 space-y-2">
+<p class="font-body-sm text-body-sm text-gray-500">
+          Interface: <span class="font-mono font-medium text-gray-700">en5</span> • USB-C Host 5G
+        </p>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-gray-50 border border-gray-200/70 text-gray-700 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-gray-500">public</span>
+<span class="font-mono">Public IP: 172.56.21.99 (T-Mobile USA)</span>
+</div>
+</div>
+<!-- Realtime Throughput Card -->
+<div class="bg-gray-50 rounded-xl p-space-md my-space-md border border-gray-100">
+<div class="flex items-center justify-between text-label-sm text-label-sm text-gray-500 mb-1">
+<span>Active Throughput</span>
+<span class="text-[#7C3AED] font-bold">1,000 Mbps PHY</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-numeral text-metric-numeral text-gray-900">92.4</span>
+<span class="font-headline-sm text-headline-sm text-gray-700">MB/s</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-xs text-gray-500">
+<span class="flex items-center gap-1 text-emerald-600 font-semibold"><span class="material-symbols-outlined text-[14px]">arrow_downward</span> 92.4 MB/s DL</span>
+<span class="flex items-center gap-1 text-[#CB202D] font-semibold"><span class="material-symbols-outlined text-[14px]">arrow_upward</span> 8.2 MB/s UL</span>
+</div>
+<!-- Mini sparkline -->
+<div class="mt-2 text-[#7C3AED]">
+<svg class="w-full h-6" fill="none" viewbox="0 0 100 20">
+<path d="M0 16 Q 15 10, 30 12 T 60 7 T 80 11 T 100 4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Ping / Jitter / Loss -->
+<div class="grid grid-cols-3 gap-2 p-2 rounded-xl bg-gray-50 text-center mb-space-sm border border-gray-100 text-xs">
+<div>
+<div class="text-gray-400 font-medium">Ping</div>
+<div class="font-bold text-gray-900 mt-0.5">24ms</div>
+</div>
+<div>
+<div class="text-gray-400 font-medium">Jitter</div>
+<div class="font-bold text-gray-900 mt-0.5">3ms</div>
+</div>
+<div>
+<div class="text-gray-400 font-medium">Loss</div>
+<div class="font-bold text-emerald-600 mt-0.5">0.0%</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action Button -->
+<div class="pt-space-sm border-t border-gray-100 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-[#7C3AED] font-bold">Priority 1 (Aggressive)</span>
+<button class="h-8 px-3.5 rounded-full border border-gray-200 bg-white hover:bg-gray-50 text-gray-800 font-label-md text-label-md transition-all flex items-center gap-1 active:scale-95" onclick="showToast('Benchmarking iPhone 15 Pro alone...')" type="button">
+<span class="material-symbols-outlined text-[16px] text-gray-500">speed</span>
+<span>Test Link</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Home Wi-Fi (Wi-Fi 6 Mesh) -> Channel Blue #2563EB -->
+<div class="bg-white rounded-2xl p-space-lg shadow-sm border border-gray-100 flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-[#2563EB]"></div>
+<div>
+<!-- Header row -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-xl bg-blue-50 text-[#2563EB] flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">wifi</span>
+</div>
+<div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold border border-emerald-100">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> ● UP • Active
+              </span>
+<h3 class="font-headline-sm text-headline-sm text-gray-900 mt-1">Home Wi-Fi (Wi-Fi 6 Mesh)</h3>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input checked="" class="sr-only peer" onchange="toggleChannel(this, 'channel-wifi')" type="checkbox"/>
+<div class="w-10 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#2563EB]"></div>
+</label>
+</div>
+<!-- Hardware details & Public IP badge -->
+<div class="mt-2 space-y-2">
+<p class="font-body-sm text-body-sm text-gray-500">
+          Interface: <span class="font-mono font-medium text-gray-700">en0</span> • 5 GHz, Ch 149 • RSSI -52 dBm
+        </p>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-gray-50 border border-gray-200/70 text-gray-700 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-gray-500">public</span>
+<span class="font-mono">Public IP: 73.189.44.12 (Xfinity)</span>
+</div>
+</div>
+<!-- Realtime Throughput Card -->
+<div class="bg-gray-50 rounded-xl p-space-md my-space-md border border-gray-100">
+<div class="flex items-center justify-between text-label-sm text-label-sm text-gray-500 mb-1">
+<span>Active Throughput</span>
+<span class="text-[#2563EB] font-bold">1,200 Mbps PHY</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-numeral text-metric-numeral text-gray-900">68.1</span>
+<span class="font-headline-sm text-headline-sm text-gray-700">MB/s</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-xs text-gray-500">
+<span class="flex items-center gap-1 text-emerald-600 font-semibold"><span class="material-symbols-outlined text-[14px]">arrow_downward</span> 68.1 MB/s DL</span>
+<span class="flex items-center gap-1 text-[#CB202D] font-semibold"><span class="material-symbols-outlined text-[14px]">arrow_upward</span> 14.5 MB/s UL</span>
+</div>
+<!-- Mini sparkline -->
+<div class="mt-2 text-[#2563EB]">
+<svg class="w-full h-6" fill="none" viewbox="0 0 100 20">
+<path d="M0 12 Q 25 18, 45 10 T 70 14 T 100 8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Ping / Jitter / Loss -->
+<div class="grid grid-cols-3 gap-2 p-2 rounded-xl bg-gray-50 text-center mb-space-sm border border-gray-100 text-xs">
+<div>
+<div class="text-gray-400 font-medium">Ping</div>
+<div class="font-bold text-gray-900 mt-0.5">12ms</div>
+</div>
+<div>
+<div class="text-gray-400 font-medium">Jitter</div>
+<div class="font-bold text-gray-900 mt-0.5">1.2ms</div>
+</div>
+<div>
+<div class="text-gray-400 font-medium">Loss</div>
+<div class="font-bold text-emerald-600 mt-0.5">0.0%</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action Button -->
+<div class="pt-space-sm border-t border-gray-100 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-[#2563EB] font-bold">Priority 2 (Balanced)</span>
+<button class="h-8 px-3.5 rounded-full border border-gray-200 bg-white hover:bg-gray-50 text-gray-800 font-label-md text-label-md transition-all flex items-center gap-1 active:scale-95" onclick="showToast('Benchmarking Home Wi-Fi alone...')" type="button">
+<span class="material-symbols-outlined text-[16px] text-gray-500">speed</span>
+<span>Test Link</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Office Gigabit Ethernet -> Channel Amber #F59E0B -->
+<div class="bg-white rounded-2xl p-space-lg shadow-sm border border-gray-100 flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-[#F59E0B]"></div>
+<div>
+<!-- Header row -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-xl bg-amber-50 text-[#F59E0B] flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">lan</span>
+</div>
+<div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold border border-emerald-100">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> ● UP • Active
+              </span>
+<h3 class="font-headline-sm text-headline-sm text-gray-900 mt-1">Office Gigabit Ethernet</h3>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input checked="" class="sr-only peer" onchange="toggleChannel(this, 'channel-ethernet')" type="checkbox"/>
+<div class="w-10 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#F59E0B]"></div>
+</label>
+</div>
+<!-- Hardware details & Public IP badge -->
+<div class="mt-2 space-y-2">
+<p class="font-body-sm text-body-sm text-gray-500">
+          Interface: <span class="font-mono font-medium text-gray-700">en4</span> • RTL8153 USB 3.0 Realtek Dongle
+        </p>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-gray-50 border border-gray-200/70 text-gray-700 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-gray-500">public</span>
+<span class="font-mono">Public IP: 104.28.19.4 (Work Intranet)</span>
+</div>
+</div>
+<!-- Realtime Throughput Card -->
+<div class="bg-gray-50 rounded-xl p-space-md my-space-md border border-gray-100">
+<div class="flex items-center justify-between text-label-sm text-label-sm text-gray-500 mb-1">
+<span>Active Throughput</span>
+<span class="text-[#B45309] font-bold">1,000 Mbps Full-Duplex</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-numeral text-metric-numeral text-gray-900">24.1</span>
+<span class="font-headline-sm text-headline-sm text-gray-700">MB/s</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-xs text-gray-500">
+<span class="flex items-center gap-1 text-emerald-600 font-semibold"><span class="material-symbols-outlined text-[14px]">arrow_downward</span> 24.1 MB/s DL</span>
+<span class="flex items-center gap-1 text-[#CB202D] font-semibold"><span class="material-symbols-outlined text-[14px]">arrow_upward</span> 22.0 MB/s UL</span>
+</div>
+<!-- Mini sparkline -->
+<div class="mt-2 text-[#F59E0B]">
+<svg class="w-full h-6" fill="none" viewbox="0 0 100 20">
+<path d="M0 13 Q 25 15, 50 11 T 75 14 T 100 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Ping / Jitter / Loss -->
+<div class="grid grid-cols-3 gap-2 p-2 rounded-xl bg-gray-50 text-center mb-space-sm border border-gray-100 text-xs">
+<div>
+<div class="text-gray-400 font-medium">Ping</div>
+<div class="font-bold text-gray-900 mt-0.5">8ms</div>
+</div>
+<div>
+<div class="text-gray-400 font-medium">Jitter</div>
+<div class="font-bold text-gray-900 mt-0.5">0.4ms</div>
+</div>
+<div>
+<div class="text-gray-400 font-medium">Loss</div>
+<div class="font-bold text-emerald-600 mt-0.5">0.0%</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action Button -->
+<div class="pt-space-sm border-t border-gray-100 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-[#B45309] font-bold">Priority 3 (Latency Shield)</span>
+<button class="h-8 px-3.5 rounded-full border border-gray-200 bg-white hover:bg-gray-50 text-gray-800 font-label-md text-label-md transition-all flex items-center gap-1 active:scale-95" onclick="showToast('Benchmarking Ethernet alone...')" type="button">
+<span class="material-symbols-outlined text-[16px] text-gray-500">speed</span>
+<span>Test Link</span>
+</button>
+</div>
+</div>
+<!-- Card 4: FAILED LINK with Friendly Fix Suggestion (WireGuard VPN) -->
+<div class="bg-white rounded-2xl p-space-lg shadow-sm border border-rose-200/80 flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow" id="card-wireguard">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-rose-500"></div>
+<div>
+<!-- Header row -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">vpn_lock</span>
+</div>
+<div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 font-label-sm text-label-sm font-semibold border border-rose-200">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> ● DOWN • Blocked
+              </span>
+<h3 class="font-headline-sm text-headline-sm text-gray-900 mt-1">Corporate WireGuard VPN (utun3)</h3>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input class="sr-only peer" onchange="toggleChannel(this, 'channel-vpn')" type="checkbox"/>
+<div class="w-10 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-rose-500"></div>
+</label>
+</div>
+<!-- Hardware details & Public IP badge -->
+<div class="mt-2 space-y-2">
+<p class="font-body-sm text-body-sm text-gray-500">
+          Interface: <span class="font-mono font-medium text-gray-700">utun3</span> • Virtual Tunnel Device
+        </p>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-rose-50/70 border border-rose-200 text-rose-800 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-rose-500">report_problem</span>
+<span class="font-mono">IP: Unassigned / Route Clashing</span>
+</div>
+</div>
+<!-- Realtime Throughput Card (Zeroed) -->
+<div class="bg-rose-50/40 rounded-xl p-space-md my-space-md border border-rose-100">
+<div class="flex items-center justify-between text-label-sm text-label-sm text-gray-500 mb-1">
+<span>Active Throughput</span>
+<span class="text-rose-600 font-bold">No route responding</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-numeral text-metric-numeral text-gray-400">0.0</span>
+<span class="font-headline-sm text-headline-sm text-gray-400">MB/s</span>
+</div>
+<p class="text-xs text-rose-600 mt-1 font-medium">Packets dropped by kernel default gateway conflict</p>
+</div>
+<!-- Friendly Diagnostic Fix Callout Banner -->
+<div class="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 mb-space-sm flex flex-col gap-2">
+<div class="flex items-start gap-2">
+<span class="text-base select-none">⚠️</span>
+<div class="text-xs leading-relaxed font-medium">
+<strong>VPN is blocking this link.</strong> Pause the VPN and test again.
+              </div>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<button class="h-7 px-3 rounded-lg bg-[#E23744] hover:bg-[#CB202D] text-white text-xs font-semibold shadow-sm transition-all active:scale-95 flex items-center gap-1" onclick="showToast('Pausing utun3 WireGuard &amp; running diagnostic probe...')" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Pause &amp; Re-test
+              </button>
+<button class="h-7 px-2.5 rounded-lg bg-white border border-amber-300 text-amber-900 text-xs font-medium hover:bg-amber-100/50 transition-colors" onclick="showToast('Opening interface routing table guide...')" type="button">
+                Troubleshoot
+              </button>
+</div>
+</div>
+</div>
+<!-- Bottom Status / Diagnostics row -->
+<div class="pt-space-sm border-t border-gray-100 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-rose-600 font-bold">Excluded from Bond</span>
+<button class="h-8 px-3.5 rounded-full border border-gray-200 bg-white hover:bg-gray-50 text-gray-700 font-label-md text-label-md transition-all flex items-center gap-1 active:scale-95" onclick="showToast('Probing utun3 fallback sockets...')" type="button">
+<span class="material-symbols-outlined text-[16px] text-gray-400">build</span>
+<span>Diagnose</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Multi-stream Convergence Architecture & Bonded Socket details -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Dynamic Packet Bonding Pipeline -->
+<div class="lg:col-span-8 bg-white rounded-2xl p-space-lg shadow-sm border border-gray-100 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-gray-900">Dynamic Packet Bonding Pipeline</h2>
+<p class="font-body-sm text-body-sm text-gray-500">Downstream packet fragmentation reassembled in local zero-copy ring buffer</p>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-gray-100 font-mono text-label-sm text-label-sm text-gray-700">
+            Buffer: 64 MB • Latency Delta ≤ 16ms
+          </span>
+</div>
+<!-- Convergent Node Diagram Canvas -->
+<div class="w-full bg-[#F8F8F8] rounded-xl p-space-md relative overflow-hidden border border-gray-100">
+<svg class="w-full h-44" fill="none" viewbox="0 0 760 170">
+<!-- Source Lines -->
+<path class="animate-[dash_1.5s_linear_infinite]" d="M 120 35 C 240 35, 340 85, 460 85" stroke="#7C3AED" stroke-dasharray="6 4" stroke-width="3"></path>
+<path class="animate-[dash_1.8s_linear_infinite]" d="M 120 85 C 240 85, 340 85, 460 85" stroke="#2563EB" stroke-dasharray="6 4" stroke-width="3"></path>
+<path class="animate-[dash_2.2s_linear_infinite]" d="M 120 135 C 240 135, 340 85, 460 85" stroke="#F59E0B" stroke-dasharray="6 4" stroke-width="3"></path>
+<!-- Combined Outbound Line -->
+<path d="M 520 85 L 670 85" stroke="#E23744" stroke-linecap="round" stroke-width="5"></path>
+<circle class="animate-ping" cx="595" cy="85" fill="#FFFFFF" r="4"></circle>
+<!-- Left Source Badges -->
+<g transform="translate(10, 16)">
+<rect fill="#FFFFFF" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.08))" height="38" rx="8" width="115"></rect>
+<circle cx="20" cy="19" fill="#7C3AED" r="6"></circle>
+<text fill="#1B1B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" x="34" y="18">en5 (iPhone 5G)</text>
+<text fill="#5B403F" font-family="Plus Jakarta Sans" font-size="9" x="34" y="29">92.4 MB/s (51%)</text>
+</g>
+<g transform="translate(10, 66)">
+<rect fill="#FFFFFF" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.08))" height="38" rx="8" width="115"></rect>
+<circle cx="20" cy="19" fill="#2563EB" r="6"></circle>
+<text fill="#1B1B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" x="34" y="18">en0 (Wi-Fi 6)</text>
+<text fill="#5B403F" font-family="Plus Jakarta Sans" font-size="9" x="34" y="29">68.1 MB/s (37%)</text>
+</g>
+<g transform="translate(10, 116)">
+<rect fill="#FFFFFF" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.08))" height="38" rx="8" width="115"></rect>
+<circle cx="20" cy="19" fill="#F59E0B" r="6"></circle>
+<text fill="#1B1B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" x="34" y="18">en4 (Ethernet)</text>
+<text fill="#5B403F" font-family="Plus Jakarta Sans" font-size="9" x="34" y="29">24.1 MB/s (12%)</text>
+</g>
+<!-- Center Convergence Engine Node -->
+<g transform="translate(450, 55)">
+<rect fill="#E23744" filter="drop-shadow(0 4px 12px rgba(226,55,68,0.3))" height="60" rx="14" width="68"></rect>
+<path d="M 472 80 L 484 85 L 472 90 Z" fill="#FFFFFF"></path>
+<text fill="#1B1B1B" font-family="Plus Jakarta Sans" font-size="10" font-weight="700" text-anchor="middle" x="484" y="125">Merger Engine</text>
+</g>
+<!-- Final Bonded Stream Receiver Node -->
+<g transform="translate(640, 52)">
+<rect fill="#FFFFFF" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))" height="66" rx="12" width="105"></rect>
+<text fill="#1B1B1B" font-family="Plus Jakarta Sans" font-size="11" font-weight="700" text-anchor="middle" x="692" y="74">Bonded Socket</text>
+<text fill="#E23744" font-family="Plus Jakarta Sans" font-size="13" font-weight="800" text-anchor="middle" x="692" y="90">184.6 MB/s</text>
+<text fill="#5B403F" font-family="Plus Jakarta Sans" font-size="9" text-anchor="middle" x="692" y="104">127.0.0.1:7890</text>
+</g>
+</svg>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-md text-gray-600 font-body-sm text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-emerald-600">verified</span>
+<span>Adaptive MTU matching active (1500 bytes aligned across 3 streams)</span>
+</div>
+<button class="text-[#CB202D] hover:text-[#E23744] font-label-md text-label-md flex items-center gap-1 font-semibold" onclick="showToast('Opening raw packet analyzer...')" type="button">
+          Open Packet Inspector <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Bonded Sockets & Local Endpoints -->
+<div class="lg:col-span-4 bg-white rounded-2xl p-space-lg shadow-sm border border-gray-100 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-sm mb-space-sm">
+<div class="w-9 h-9 rounded-xl bg-gray-100 flex items-center justify-center text-gray-800">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-gray-900">Bonded Sockets</h2>
+<p class="font-body-sm text-body-sm text-gray-500">Local intercept endpoints</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-gray-600 mb-space-md">
+          Route your browsers, BitTorrent clients, or terminal tools through either local port to inherit merged multi-gigabit throughput:
+        </p>
+<!-- Proxy Config Snippet 1 -->
+<div class="bg-gray-50 rounded-xl p-space-sm mb-space-sm flex items-center justify-between border border-gray-200/70">
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-gray-500 uppercase tracking-wider block font-semibold">HTTP/HTTPS Proxy</span>
+<code class="font-mono font-headline-sm text-headline-sm text-gray-900 truncate block">127.0.0.1:7890</code>
+</div>
+<button class="h-8 w-8 rounded-lg bg-white border border-gray-200 hover:bg-gray-100 flex items-center justify-center text-gray-700 transition-all flex-shrink-0 active:scale-95" onclick="navigator.clipboard.writeText('127.0.0.1:7890'); showToast('Copied HTTP Proxy endpoint to clipboard');" title="Copy endpoint" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+<!-- Proxy Config Snippet 2 -->
+<div class="bg-gray-50 rounded-xl p-space-sm mb-space-md flex items-center justify-between border border-gray-200/70">
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-gray-500 uppercase tracking-wider block font-semibold">SOCKS5 Protocol</span>
+<code class="font-mono font-headline-sm text-headline-sm text-gray-900 truncate block">127.0.0.1:7891</code>
+</div>
+<button class="h-8 w-8 rounded-lg bg-white border border-gray-200 hover:bg-gray-100 flex items-center justify-center text-gray-700 transition-all flex-shrink-0 active:scale-95" onclick="navigator.clipboard.writeText('127.0.0.1:7891'); showToast('Copied SOCKS5 Proxy endpoint to clipboard');" title="Copy endpoint" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+<!-- System Hook Option -->
+<div class="p-space-sm rounded-xl bg-gray-50 border border-gray-200/70 flex items-start gap-space-sm mb-space-md">
+<input checked="" class="mt-1 rounded text-[#E23744] focus:ring-0" id="system-proxy" type="checkbox"/>
+<label class="cursor-pointer" for="system-proxy">
+<span class="font-label-md text-label-md text-gray-900 font-semibold block">Set as macOS System Proxy</span>
+<span class="font-body-sm text-body-sm text-gray-500 block">Automatically routes Safari, Chrome, and App Store through Internet Merger.</span>
+</label>
+</div>
+</div>
+<div class="pt-space-xs">
+<button class="w-full h-10 px-space-md rounded-full bg-gray-100 hover:bg-gray-200 text-gray-900 font-label-md text-label-md transition-all flex items-center justify-center gap-2 active:scale-98 font-semibold" onclick="showToast('Applied system proxy settings to macOS network routing table.')" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_ethernet</span>
+<span>Configure System Network Route</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Toast Notification Container -->
+<div class="fixed bottom-6 right-6 z-50 bg-[#1C1C1C] text-white px-space-md py-space-sm rounded-xl shadow-2xl flex items-center gap-space-sm transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toast-message">
+<span class="material-symbols-outlined text-emerald-400 text-[20px]" id="toast-icon">check_circle</span>
+<span class="font-label-md text-label-md font-medium" id="toast-text">Action completed</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+  function toggleChannel(element, channelId) {
+    const isChecked = element.checked;
+    const card = element.closest('.group');
+    if (!isChecked) {
+      card.classList.add('opacity-50');
+      showToast('Interface disabled from bonded pool');
+    } else {
+      card.classList.remove('opacity-50');
+      showToast('Interface re-enabled and participating in bonded pool');
+    }
+  }
+
+  function toggleVpnCard(checkbox) {
+    const vpnCard = document.getElementById('card-wireguard');
+    if (checkbox.checked) {
+      vpnCard.classList.remove('hidden');
+      showToast('Showing all inactive & VPN interfaces');
+    } else {
+      vpnCard.classList.add('hidden');
+      showToast('Hiding inactive interfaces');
+    }
+  }
+
+  function runBenchmark(allAtOnce) {
+    const btn = document.getElementById('test-all-btn');
+    if (allAtOnce) {
+      showToast('Benchmarking all 4 interfaces simultaneously...');
+    } else {
+      showToast('Starting sequential isolated route benchmark (1/3 iPhone 5G)...');
+    }
+  }
+
+  function showToast(text, isError) {
+    const toast = document.getElementById('toast-message');
+    const toastText = document.getElementById('toast-text');
+    const toastIcon = document.getElementById('toast-icon');
+    toastText.textContent = text;
+    
+    if (isError) {
+      toastIcon.textContent = 'warning';
+      toastIcon.className = 'material-symbols-outlined text-rose-400 text-[20px]';
+    } else {
+      toastIcon.textContent = 'check_circle';
+      toastIcon.className = 'material-symbols-outlined text-emerald-400 text-[20px]';
+    }
+
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 3000);
+  }
+</script>
+</body></html>

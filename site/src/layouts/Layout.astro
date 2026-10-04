@@ -1,0 +1,177 @@
+---
+import '../styles/theme.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  ogType?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = '',
+  ogType = 'website',
+  ogImage = '/og-image.png',
+} = Astro.props;
+
+const siteUrl = 'https://internetmerger.com';
+const canonicalURL = new URL(canonicalPath || Astro.url.pathname, siteUrl).toString();
+const fullOgImageUrl = new URL(ogImage, siteUrl).toString();
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullOgImageUrl} />
+    <meta property="og:site_name" content="Internet Merger" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullOgImageUrl} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
+
+    <slot name="head" />
+
+    <script is:inline>
+      // Initialize theme from preference or system
+      (function() {
+        try {
+          const stored = localStorage.getItem('im_theme');
+          if (stored === 'light' || stored === 'dark') {
+            document.documentElement.setAttribute('data-theme', stored);
+          } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            document.documentElement.setAttribute('data-theme', 'light');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (_) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <header class="site-nav">
+      <div class="container nav-wrapper">
+        <a href="/" class="nav-brand">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+          <span>Internet Merger</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main Navigation">
+          <a href="/how-it-works" class="nav-link">How It Works</a>
+          <a href="/faq" class="nav-link">FAQ</a>
+          <a href="/blog" class="nav-link">Guides</a>
+          <a href="/privacy" class="nav-link">Privacy</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            type="button"
+            id="theme-toggle"
+            class="btn btn-secondary"
+            style="padding: 8px 12px; font-size: 13px;"
+            aria-label="Toggle theme"
+          >
+            <span id="theme-icon">🌓</span>
+          </button>
+          <a href="/download" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">
+            Download Free
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div style="font-weight: 700; color: var(--text); font-size: 15px; margin-bottom: 8px;">
+              Internet Merger
+            </div>
+            <p style="font-size: 13px; line-height: 1.6; max-width: 320px; color: var(--text-secondary); margin-bottom: 14px;">
+              Open-source multi-link download accelerator. Combine Wi-Fi, Ethernet, and 4G/5G mobile tethering to speed up large downloads.
+            </p>
+            <span class="badge badge-success">No Trackers &bull; 100% Local</span>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Product</div>
+            <ul class="footer-links">
+              <li><a href="/download">Download v0.1.0</a></li>
+              <li><a href="/how-it-works">How It Works</a></li>
+              <li><a href="/faq">FAQ & Limits</a></li>
+              <li><a href="https://github.com/Pranav-node/internet-merger/blob/main/checksums.txt" target="_blank" rel="noopener">SHA-256 Checksums</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Guides & Analysis</div>
+            <ul class="footer-links">
+              <li><a href="/blog/how-to-combine-wifi-and-usb-tethering">Combine Wi-Fi & USB Tethering</a></li>
+              <li><a href="/blog/why-two-connections-from-same-router-dont-add-up">Same Router Bandwidth Limit</a></li>
+              <li><a href="/blog/fix-winerror-10013-vpn-blocks-network-adapter">Fix WinError 10013 VPN Conflict</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Transparency</div>
+            <ul class="footer-links">
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="https://github.com/Pranav-node/internet-merger/blob/main/SECURITY.md" target="_blank" rel="noopener">Security Policy</a></li>
+              <li><a href="https://github.com/Pranav-node/internet-merger" target="_blank" rel="noopener">GitHub Repository</a></li>
+              <li><a href="https://github.com/Pranav-node/internet-merger/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>&copy; {new Date().getFullYear()} Internet Merger Contributors. Free & Open Source under MIT.</div>
+          <div>Binds strictly to 127.0.0.1 &bull; Zero telemetry collected</div>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      const toggle = document.getElementById('theme-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          const current = document.documentElement.getAttribute('data-theme');
+          const next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          try {
+            localStorage.setItem('im_theme', next);
+          } catch (_) {}
+        });
+      }
+    </script>
+  </body>
+</html>
